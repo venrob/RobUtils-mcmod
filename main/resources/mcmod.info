@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rum",
+  "name": "Rob Utils",
+  "description": "Mod of utilities I wanted to include for my server",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Venrob"],
+  "credits": "Venrob",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
