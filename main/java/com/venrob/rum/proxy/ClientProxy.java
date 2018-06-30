@@ -1,4 +1,4 @@
-package com.venrob.robutils.proxy;
+package com.venrob.rum.proxy;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;

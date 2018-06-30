@@ -1,9 +1,9 @@
-package com.venrob.robutils;
+package com.venrob.rum;
 
-import com.venrob.robutils.commands.IndividualPvpToggle;
-import com.venrob.robutils.handlers.LoggerEventHandler;
-import com.venrob.robutils.proxy.CommonProxy;
-import com.venrob.robutils.util.Reference;
+import com.venrob.rum.commands.IndividualPvpToggle;
+import com.venrob.rum.handlers.LoggerEventHandler;
+import com.venrob.rum.proxy.CommonProxy;
+import com.venrob.rum.util.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;

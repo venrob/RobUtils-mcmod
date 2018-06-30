@@ -1,4 +1,4 @@
-package com.venrob.robutils.proxy;
+package com.venrob.rum.proxy;
 
 import net.minecraft.item.Item;
 
