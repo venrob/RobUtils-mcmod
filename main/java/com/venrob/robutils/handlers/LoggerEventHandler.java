@@ -28,7 +28,7 @@ public class LoggerEventHandler {
     @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void preInit(){
         if(FMLCommonHandler.instance().getEffectiveSide()==Side.CLIENT)return;
-        Main.logger.info("LoggerEventHandler PreInit start");
+        Main.logger.info("LoggerEventHandler PreInit...");
         config = new File(Main.baseMCPath + "/config/RobUtils/config.txt");
         if(!config.exists()){
             try {
@@ -104,7 +104,7 @@ public class LoggerEventHandler {
         } catch (IOException e) {
             Main.logger.error("Error in \"/config/RobUtils/config.txt\"" + Utils.getStackTraceString(e));
         }
-        itemsToLogR =  out;
+        itemsToLogR = out;
         StringBuilder sb = new StringBuilder();
         for(Item it : out){
             sb.append("\n");

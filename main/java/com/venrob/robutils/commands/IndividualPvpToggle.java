@@ -1,4 +1,4 @@
-package com.venrob.robutils.Commands;
+package com.venrob.robutils.commands;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;

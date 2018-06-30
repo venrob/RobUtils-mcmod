@@ -1,6 +1,6 @@
 package com.venrob.robutils;
 
-import com.venrob.robutils.Commands.IndividualPvpToggle;
+import com.venrob.robutils.commands.IndividualPvpToggle;
 import com.venrob.robutils.handlers.LoggerEventHandler;
 import com.venrob.robutils.proxy.CommonProxy;
 import com.venrob.robutils.util.Reference;

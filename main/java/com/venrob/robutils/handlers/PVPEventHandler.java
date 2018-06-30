@@ -1,6 +1,6 @@
 package com.venrob.robutils.handlers;
 
-import com.venrob.robutils.Commands.IndividualPvpToggle;
+import com.venrob.robutils.commands.IndividualPvpToggle;
 import com.venrob.robutils.util.Utils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.TextComponentString;
@@ -15,20 +15,17 @@ public class PVPEventHandler {
     @SubscribeEvent(priority=EventPriority.HIGHEST)
     public static void cancelPvp(AttackEntityEvent event) {
         if (event.getTarget() instanceof EntityPlayer) {
-            if (IndividualPvpToggle.noAttack.contains(Utils.getPlayer((event.getEntityPlayer()).getDisplayNameString()))) {
+            EntityPlayer attacker = event.getEntityPlayer();
+            EntityPlayer defender = (EntityPlayer)event.getEntity();
+            if (IndividualPvpToggle.noAttack.contains(attacker)) {
                 if (event.isCancelable()) event.setCanceled(true);
-                event.getEntity().sendMessage(new TextComponentString("You currently are not allowed to PVP"));
+                attacker.sendMessage(new TextComponentString("You currently are not allowed to PVP"));
             }
-            if (IndividualPvpToggle.noDefend.contains(Utils.getPlayer(((EntityPlayer) event.getTarget()).getDisplayNameString()))) {
+            if (IndividualPvpToggle.noDefend.contains(defender)) {
                 if (event.isCancelable()) event.setCanceled(true);
-                event.getEntity().sendMessage(new TextComponentString("This target is currently immune to PVP"));
+                attacker.sendMessage(new TextComponentString("This target is currently immune to PVP"));
             }
-
         }
-        /*
-        if(IndividualPvpToggle.noAttack.contains(event.getEntityPlayer())){
-            if(event.isCancelable())event.setCanceled(true);
-        }//*/
     }
 
     @SubscribeEvent()
