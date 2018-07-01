@@ -15,12 +15,12 @@ public class PVPEventHandler {
     public static void cancelPvp(AttackEntityEvent event) {
         if (event.getTarget() instanceof EntityPlayer) {
             EntityPlayer attacker = event.getEntityPlayer();
-            EntityPlayer defender = (EntityPlayer)event.getEntity();
-            if (IndividualPvpToggle.noAttack.contains(attacker)) {
+            EntityPlayer defender = (EntityPlayer)event.getTarget();
+            if (IndividualPvpToggle.noPVP.contains(attacker)) {
                 if (event.isCancelable()) event.setCanceled(true);
                 attacker.sendMessage(new TextComponentString("You currently are not allowed to PVP"));
             }
-            if (IndividualPvpToggle.noDefend.contains(defender)) {
+            if (IndividualPvpToggle.noPVP.contains(defender)) {
                 if (event.isCancelable()) event.setCanceled(true);
                 attacker.sendMessage(new TextComponentString("This target is currently immune to PVP"));
             }
@@ -31,8 +31,7 @@ public class PVPEventHandler {
     public static void cancelPvpSetOnConnect(PlayerEvent.PlayerLoggedInEvent event){
         EntityPlayer pl = event.player;
         if(pl.getTags().contains("pvpt")) {
-            IndividualPvpToggle.noAttack.add(pl);
-            IndividualPvpToggle.noDefend.add(pl);
+            IndividualPvpToggle.noPVP.add(pl);
         }
     }
 }
